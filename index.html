@@ -1,0 +1,47 @@
+<!--create a html page to demonstrate the use of animate() function in jQuery-->
+<html>
+    <head>
+        <script src="js/jquery-3.7.1.min.js"></script>
+        <script>
+               $(document).ready(function(){
+                $("#btn").click(function(){
+
+            //        $("#imgball").animate({width:"300px",height:"300px"},5000);
+        
+
+                // $("#imgball").animate({left:800},5000);
+                // $("#imgball").animate({top:500},5000);
+
+                 var x=250,y=2,flag=0;
+                 while(true){
+                    $("#imgball").animate({top:x,left:y},50);
+                    y=y+2;
+                    if(flag==0)
+                        x=x-4;
+                    
+                  else
+                      x=x+4;
+                   
+                   if(x<=50){
+                    var t  =y+10;
+                    while(y<t){
+                        $("#imgball").animate({top:x,left:y},50);
+                        y++;
+                    }
+                    flag=1;
+                   }
+                   else if(x==250)
+                   flag=0;
+                if(y>850)
+                break;
+                 } 
+            });
+        });
+        </script>
+    </head>
+    <body>
+     <input type="button" id="btn" value="Start Enimation"/><br><br>
+     <img src="image/download (1).jpg" id="imgball" width="80px" height="80px" style="position: absolute;top:250px"/> 
+     
+    </body>
+</html>
